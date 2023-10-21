@@ -22,63 +22,62 @@ function handleChange(event) {
 
 //refactor code
 
-function cElm(type, attr = {}, ...children) {
-  let element = document.createElement(`${type}`);
-  for (let key in attr) {
-    if (key.startsWith("data-")) {
-      element.setAttribute(key, attr[key]);
-    } else if (key.startsWith("on")) {
-      let events = key.replace("on", "");
-      element.addEventListener(events, attr[key]);
-    } else {
-      element[key] = attr[key];
-    }
-  }
+// function cElm(type, attr = {}, ...children) {
+//   let element = document.createElement(`${type}`);
+//   for (let key in attr) {
+//     if (key.startsWith("data-")) {
+//       element.setAttribute(key, attr[key]);
+//     } else if (key.startsWith("on")) {
+//       let events = key.replace("on", "");
+//       element.addEventListener(events, attr[key]);
+//     } else {
+//       element[key] = attr[key];
+//     }
+//   }
 
-  children.forEach((elm) => {
-    if (typeof elm === "object") {
-      element.append(elm);
-    }
-    if (typeof elm === "string") {
-      let node = document.createTextNode(elm);
-      element.append(node);
-    }
-  });
-  return element;
-}
+//   children.forEach((elm) => {
+//     if (typeof elm === "object") {
+//       element.append(elm);
+//     }
+//     if (typeof elm === "string") {
+//       let node = document.createTextNode(elm);
+//       element.append(node);
+//     }
+//   });
+//   return element;
+// }
 
-let cElm = React.createElement();
+// let cElm = React.createElement();
 
 function createMovieUI(data, root) {
-  root.innerHTML = "";
-  data.forEach((elm, i) => {
-    let li = cElm(
+  //   root.innerHTML = "";
+  let ui = data.map((elm, i) => {
+    return React.createElement(
       "li",
       {
         className: "movie_list",
       },
-      cElm(
+      React.createElement(
         "label",
         {
-          "data-id": i,
+          for: i,
           className: "movie_name",
         },
         elm.name,
-        cElm(
+        React.createElement(
           "button",
           {
             id: i,
             className: "movie_status",
-            onclick: handleChange,
+            onClick: handleChange,
           },
           elm.watched ? "watched" : "To Watch"
           //   addEventListener("click", handleChange)
         )
       )
     );
-    list.append(li);
   });
-  React.DOM.render(li, list);
+  ReactDOM.render(ui, root);
 }
 
 createMovieUI(allMovies, list);
