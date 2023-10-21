@@ -9,6 +9,8 @@
   "author": "AltCampus",
   "license": "GNU GPL V3",
   "dependencies": {
-    "jest": "^26.0.1"
+    "jest": "^26.0.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }
