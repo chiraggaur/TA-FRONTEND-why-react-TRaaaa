@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <script src="http://localhost:8097"></script> -->
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="bg_container">
+      <div class="movie_container">
+        <h1>Movie Watch List</h1>
+        <input id="input_movie" type="text" placeholder="Enter Movie Name!" />
+        <ul class="movie_list"></ul>
+      </div>
+    </div>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      // JSX code goes here
+
+      // selected html elements
+      let input = document.querySelector("#input_movie");
+      let list = document.querySelector(".movie_list");
+      let allMovies = [];
+      input.addEventListener("keyup", (event) => {
+        // allMovies = [];
+        if (event.keyCode === 13) {
+          allMovies.push({
+            name: event.target.value,
+            watched: false,
+          });
+          event.target.value = "";
+          createMovieUI(allMovies, list);
+        }
+      });
+
+      function handleChange(event) {
+        let id = event.target.id;
+        allMovies[id].watched = !allMovies[id].watched;
+        createMovieUI(allMovies, list);
+      }
+
+      //refactor code
+
+      // function cElm(type, attr = {}, ...children) {
+      //   let element = document.createElement(`${type}`);
+      //   for (let key in attr) {
+      //     if (key.startsWith("data-")) {
+      //       element.setAttribute(key, attr[key]);
+      //     } else if (key.startsWith("on")) {
+      //       let events = key.replace("on", "");
+      //       element.addEventListener(events, attr[key]);
+      //     } else {
+      //       element[key] = attr[key];
+      //     }
+      //   }
+
+      //   children.forEach((elm) => {
+      //     if (typeof elm === "object") {
+      //       element.append(elm);
+      //     }
+      //     if (typeof elm === "string") {
+      //       let node = document.createTextNode(elm);
+      //       element.append(node);
+      //     }
+      //   });
+      //   return element;
+      // }
+
+      // let cElm = React.createElement();
+
+      function createMovieUI(data, root) {
+        //   root.innerHTML = "";
+        let ui = data.map((elm, i) => {
+          return (
+            <li className="movie_list">
+              <label for={i} className="movie_name">
+                {elm.name}
+                <button id={i} className="movie_status" onClick={handleChange}>
+                  {elm.watched ? "watched" : "To Watch"}
+                </button>
+              </label>
+            </li>
+          );
+        });
+        ReactDOM.render(ui, root);
+      }
+
+      createMovieUI(allMovies, list);
+
+      // status
+    </script>
+  </body>
+</html>
