@@ -1,0 +1,69 @@
+/* body {
+  background-color: green;
+} */
+.header {
+  width: 100vw;
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+  border: 2px solid black;
+}
+
+.logo {
+  width: 100px;
+  display: flex;
+  align-items: center;
+  font-size: 22px;
+  /* border: 2px solid black; */
+}
+.navigation {
+  display: flex;
+  width: 400px;
+  font-size: 22px;
+  margin-left: 200px;
+  justify-content: space-evenly;
+  align-items: center;
+  /* border: 2px solid black; */
+}
+.nav-links {
+  text-decoration: none;
+  color: green;
+}
+.Hero_Heading {
+  text-align: center;
+  color: rgb(56, 140, 230);
+}
+
+/* articles */
+
+.Article_container {
+  width: 30%;
+  height: 30%;
+  border: 2px solid black;
+}
+.card {
+  width: 400px;
+  height: 500px;
+  font-size: 20px;
+  border: 2px solid green;
+}
+
+.images_cards {
+  width: 100%;
+  height: 80%;
+}
+
+.main_article {
+  text-align: center;
+  font-size: 30px;
+  margin-top: 100px;
+}
+.articles_container {
+  width: 1400px;
+  height: 1600px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  border: 2px solid black;
+}
