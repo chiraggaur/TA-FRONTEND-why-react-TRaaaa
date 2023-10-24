@@ -3,7 +3,7 @@ import Header from "./Header";
 import Hero from "./Hero";
 import Articles from "./Article";
 import footer from "./Footer";
-import propTypes from "prop-types";
+
 // component
 
 function App() {
