@@ -73,3 +73,5 @@ function Test(props) {
 export default Test;
 export { FruitsName };
 export { Class };
+
+// react commit test
