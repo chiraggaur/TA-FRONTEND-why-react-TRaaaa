@@ -1,0 +1,57 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+/* .Butt_assign {
+  width: 200px;
+  height: 50px;
+  margin: 50px 600px;
+  background-color: rgb(92, 92, 223);
+  font-size: 22px;
+  color: white;
+} */
+.container {
+  width: 400px;
+  height: 200px;
+  /* border: 2px solid black; doubt */
+  display: flex;
+  margin: 200px 600px;
+  flex-direction: column;
+}
+.button {
+  width: 300px;
+  height: 200px;
+  margin-top: 20px;
+}
+.button--SMALL {
+  width: 100px;
+  height: 100px;
+}
+.button--MEDIUM {
+  width: 100px;
+  height: 100px;
+}
+.button--LARGE {
+  width: 100px;
+  height: 100px;
+}
+
+.button--PRIMARY {
+  background-color: green;
+}
+.button--SECONDARY {
+  background-color: BLUE;
+}
+.button--TERITARY {
+  background-color: RED;
+}
