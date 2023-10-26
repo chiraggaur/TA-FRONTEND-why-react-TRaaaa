@@ -1,11 +1,12 @@
-import data from "./data";
-import Green from "./Green";
+import colors from "./colors";
+import Color from "./Color";
 function App() {
-  return data.map((elm) => {
-    // return elm.green.map((nelm) => {
-    //   return <Green  {...nelm} />;
-    // });
-    return <Green {...elm.green} />;
+  return Object.keys(colors).map((elm) => {
+    return (
+      <div className="wrapper">
+        <Color name={elm} code={colors[elm]} />
+      </div>
+    );
   });
 }
 
