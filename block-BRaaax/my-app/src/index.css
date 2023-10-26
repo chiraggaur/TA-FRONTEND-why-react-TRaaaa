@@ -22,8 +22,8 @@ code {
 } */
 .container {
   width: 400px;
-  height: 200px;
-  /* border: 2px solid black; doubt */
+  height: 500px;
+  border: 2px solid black;
   display: flex;
   margin: 200px 600px;
   flex-direction: column;

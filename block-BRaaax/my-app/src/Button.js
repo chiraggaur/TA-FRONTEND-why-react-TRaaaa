@@ -4,7 +4,11 @@ function ButtonAssign(props) {
   }
   return (
     <>
-      <button className={getStyled()} onClick={props.onClickHandler}>
+      <button
+        className={getStyled()}
+        onClick={props.onClickHandler}
+        disabled={props.disabled}
+      >
         {props.label || "Button"}{" "}
       </button>
     </>
