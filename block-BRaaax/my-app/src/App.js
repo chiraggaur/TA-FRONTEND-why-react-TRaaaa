@@ -5,10 +5,11 @@ function App() {
     <div className="container">
       <ButtonAssign label="testing " size="SMALL" type="PRIMARY" />
       <ButtonAssign />
-      <ButtonAssign label="testing " type="SECONDARY" disabled />
+      <ButtonAssign label="testing " type="SECONDARY" />
       <ButtonAssign
         type="PRIMARY"
         onClickHandler={() => alert("hello! you re great")}
+        disabled
       />
     </div>
   );
